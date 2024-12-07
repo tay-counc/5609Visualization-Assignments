@@ -14,15 +14,16 @@ In your VSCode, create an `index.html` file as the one shown above.
 
 Open it in your chrome browser and you will see a webpage like below. Please the button will change the shwoing number of clicks.
 
-<img width="364" alt="image" src="https://github.com/user-attachments/assets/310451e0-32f5-4d20-92ed-303e6e02159c">
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/ddbc6d63-04c8-4a68-8845-882e99698c98">
 
 Modify the webpage to refresh your memory:
 1. [modify the style] change the background color of the button to `#44aa66`, modify the button font size to  `font-size: xx-large`
 2. [modift the webpage content] as shown below
 3. [modify the function] Display the remaining number of clicks.
-Stop allowing clicks after 5 clicks and show an alert: "No more clicks remaining!".
+After 5 clicks, show an alert: "No more clicks remaining!".
 
-<img width="355" alt="image" src="https://github.com/user-attachments/assets/33adb665-7b54-4b17-a6eb-1d9d8262b9f6">
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/cdac5565-8026-4e8c-98c2-ab4a16850773">
+
 
 ## Svelte
 Svelte is a modern front-end framework for building web applications. 
