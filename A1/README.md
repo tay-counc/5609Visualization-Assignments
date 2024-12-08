@@ -9,7 +9,7 @@
 
 This class assumes you have basic knowledge of web development. However, here's a quick refresher to jog your memory.
 
-<img width="814" alt="image" src="https://github.com/user-attachments/assets/c39cfa55-87fe-441f-bcf1-d65ff90c9f74">
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/c39cfa55-87fe-441f-bcf1-d65ff90c9f74">
 
 In your VSCode, create an `index.html` file as the one shown above.
 
@@ -61,11 +61,17 @@ You can then use the source control feature in VSCode to initialize your repo, p
 <img width="150" alt="image" src="https://github.com/user-attachments/assets/21d96b06-250e-44af-906e-75e676a17bb7">
 
 2. **Deploy Your Website to Github Page**
-SvelteKit has [a detailed guide on how to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages). Visit that page, and copy the code shown for the following files:
+   
+- On github.com, enable GitHub Pages on your repo by selecting “Github Actions” as the source (Repo settings → Pages → Source: GitHub Actions).
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/27485da5-55fc-4153-8c09-ab06c3bc473c"/>
 
-- `.github/workflows/deploy.yml` (you will need to create a `.github` folder — note the dot — and a `workflows` folder inside it)
-- `svelte.config.js` (this will replace svelte.config.js file already in your project).
-You can also click on the file paths above to download the files, if that’s more convenient for you.
+- In your terminal, run `npm i -D --save @sveltejs/adapter-static`.
+
+- Visit the [SvelteKit Guide to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages), and copy the code shown for the following files:
+
+  - `.github/workflows/deploy.yml` (you will need to create a `.github` folder — note the dot — and a `workflows` folder inside it. Change the `/${{ github.event.repository.name }}` to `my-vis-5609`)
+  - `svelte.config.js` (this will replace svelte.config.js file already in your project. Change `process.env.BASE_PATH` to  `my-vis-5609`).
+
 
 Commit and push these changes to your repo.
 
