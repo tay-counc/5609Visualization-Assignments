@@ -19,15 +19,20 @@ Variables in `summer_movies.csv`
 We will continue use the code code we developed in Assignment 1. 
 Please move the `src/routes/+page.svelte` you created in A1 into `src/routes/A1/+page.svelte`. You can still access it via `http://localhost:5173/A1`. 
 Similarly, we will create `src/routes/A2/+page.svelte` for this assignment.
-Run ```npm i -S d3```
+Run 
+```
+npm i -S d3
+npm i --save-dev @types/d3
+```
 
-1. a-how the rating of summer movies change over time; b- will the movie genres influence the movie length?
-   For each question, sketch three difference visualization design, and compare them
-   Then implement 
+
 
 
 ## 1. Load Data
 
-## 2. 
+## 2. Draw Genre Distribution, Step by Step
 
-## 3. Implement Visualizations
+## 3. Visual Design:
+1. How Top 3 genres change over time
+2. Is there any correlations between num_votes and average_rate. Will this correlation apply to all movie genres, or decades?
+## 4. Implement Your Visualizations

@@ -1,0 +1,1 @@
+we will do an exploratory analysis, which factors will influence the average rates of a summer movies
