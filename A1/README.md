@@ -8,19 +8,17 @@
 ## 1. Preliminary Knowledge: HTML+JS+CSS
 
    - This class assumes you have basic knowledge of web development. However, here's a quick refresher to jog your memory.
-   <img width="500" alt="image" src="https://github.com/user-attachments/assets/c39cfa55-87fe-441f-bcf1-d65ff90c9f74">
+      <img width="500" alt="image" src="https://github.com/user-attachments/assets/c39cfa55-87fe-441f-bcf1-d65ff90c9f74">
 
-   In your VSCode, create an `index.html` file as the one shown above.
+   - In your VSCode, create an `index.html` file as the one shown above.
 
-   Open it in your chrome browser and you will see a webpage like below. Please the button will change the shwoing number of clicks.
-
-   <img width="150" alt="image" src="https://github.com/user-attachments/assets/ddbc6d63-04c8-4a68-8845-882e99698c98">
+   - Open it in your chrome browser and you will see a webpage like below. Please the button will change the shwoing number of clicks.  
+      <img width="150" alt="image" src="https://github.com/user-attachments/assets/ddbc6d63-04c8-4a68-8845-882e99698c98">
 
    **Modify the webpage to refresh your memory**
    1. [modify the style] change the background color of the button to `#44aa66`, modify the button font size to  `font-size: xx-large`
    2. [modift the webpage content] as shown below
    3. [modify the function] Display the remaining number of clicks. After 5 clicks, show an alert: "No more clicks remaining!".
-
       <img width="150" alt="image" src="https://github.com/user-attachments/assets/cdac5565-8026-4e8c-98c2-ab4a16850773">
 
 
@@ -33,10 +31,13 @@ Unlike traditional frameworks like React or Vue, which use a virtual DOM, Svelte
 It compiles your components into highly efficient, plain JavaScript code that updates the DOM directly. 
 This results in faster performance and smaller bundle sizes.
 
+   * Install Svelte for VSCode Extension will make your development and debug much easier, highly recommended
+     <img width="450" alt="image" src="https://github.com/user-attachments/assets/a0bf994d-ffc2-46b4-8e05-4d93002c2bf2"/>
+
+
    * SvelteKit provides an easy way to start a Svelte Project.
 In your terminal, find a location you like to save the project, and run `npx sv create my-vis-5609` 
-(You can name it whatever you prefer, but we will assume `my-vis-5609` as the folder name for following demonstration)
-
+(You can name it whatever you prefer, but we will assume `my-vis-5609` as the folder name for following demonstration)  
       <img width="500" alt="image" src="https://github.com/user-attachments/assets/6403d66a-8eef-4c5a-b7da-0fc97bcc2c35">
 
 - Open the `my-vis-5609` folder in VSCode.
@@ -52,30 +53,28 @@ References: [Offical Svelte Tutorials](https://svelte.dev/tutorial/svelte/welcom
 
 ## 3. Publish to Github Page
 
-a. **Create A Github Repository** 
-Sign into VSCode with your GitHub account in the Accounts menu, located in the lower right of the Activity bar.
+- **Create A Github Repository** 
+   Sign into VSCode with your GitHub account in the Accounts menu, located in the lower right of the Activity bar.  
+   <img width="150" alt="image" src="https://github.com/user-attachments/assets/7963cb4c-6457-4cbf-8ee8-049caffa2d8e"/>
 
-<img width="150" alt="image" src="https://github.com/user-attachments/assets/7963cb4c-6457-4cbf-8ee8-049caffa2d8e"/>
+   You can then use the source control feature in VSCode to initialize your repo, publish the repo to github, and commit and push changes.      
+   <img width="150" alt="image" src="https://github.com/user-attachments/assets/77b28a2a-3cb9-42db-97fc-a3c8e6a8e9c7">
+   <img width="150" alt="image" src="https://github.com/user-attachments/assets/21d96b06-250e-44af-906e-75e676a17bb7">
 
-You can then use the source control feature in VSCode to initialize your repo, publish the repo to github, and commit + push changes.
-
-<img width="150" alt="image" src="https://github.com/user-attachments/assets/77b28a2a-3cb9-42db-97fc-a3c8e6a8e9c7">
-<img width="150" alt="image" src="https://github.com/user-attachments/assets/21d96b06-250e-44af-906e-75e676a17bb7">
-
-b. **Deploy Your Website to Github Page**
+- **Deploy Your Website to Github Page**
    
-- On github.com, enable GitHub Pages on your repo by selecting “Github Actions” as the source (Repo settings → Pages → Source: GitHub Actions).
-<img width="450" alt="image" src="https://github.com/user-attachments/assets/27485da5-55fc-4153-8c09-ab06c3bc473c"/>
+- On github.com, enable GitHub Pages on your repo by selecting “Github Actions” as the source (Repo settings → Pages → Source: GitHub Actions).  
+   <img width="450" alt="image" src="https://github.com/user-attachments/assets/27485da5-55fc-4153-8c09-ab06c3bc473c"/>
 
 - In your terminal, run `npm i -D --save @sveltejs/adapter-static`.
 
-- Visit the [SvelteKit Guide to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages), and copy the code shown for the following files:
+- Find the files in this A1 folder, and copy them as below for your repo (You can read [SvelteKit Guide to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages) for details):
 
   - `.github/workflows/deploy.yml` (you will need to create a `.github` folder — note the dot — and a `workflows` folder inside it. Change the `/${{ github.event.repository.name }}` to `my-vis-5609`)
   - `svelte.config.js` (this will replace svelte.config.js file already in your project. Change `process.env.BASE_PATH` to  `my-vis-5609`).
 
 
-Commit and push these changes to your repo.
+- Commit and push these changes to your repo.
 
 If all goes well, your app should be deployed to `YOUR_USERNAME.github.io/my-vis-5609`.  
 To see our GitHub Action in action (no pun intended 🙃), navigate to the “Actions” tab on your GitHub repo. You’ll be able to see both actions that are currently running, as well as past ones.
