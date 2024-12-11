@@ -12,13 +12,13 @@
   <h1>[Your Name]'s VIS Site</h1>
   <img
     width="200px"
-    src="url to a preferred image"
+    src="url to your favorite image"
   />
   <div>
     You can click up to
     <select 
-        bind:value={/*tip: bind the select action to change the maxClick Value svelte bind https://svelte.dev/docs/svelte/bind#select-bind:value */} 
-        onchange={() => (/*tip: define what will happen after click. Maybe we need to update the remaining number of clikc when click a new maxClick value */)}>
+        bind:value={/*tip: bind the select action to change the maxClick value. https://svelte.dev/docs/svelte/bind#select-bind:value */} 
+        onchange={() => (/*tip: define what will happen after click. Maybe you want to update the remaining number of clikc when click a new maxClick value */)}>
       {#each [2, 4, 6] as optionNum}
         <option value={optionNum}>
           {optionNum}
