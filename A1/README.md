@@ -44,9 +44,11 @@ In your terminal, find a location you like to save the project, and run `npx sv 
    - Open the terminal by selecting `View > Terminal` from the menu bar, or by pressing the `⌃`` keyboard shortcut.
    - Run `npm run dev -- --open` in the terminal. The website will be open in `http://localhost:5173/`. Whenever you change the code, the website will be updated automatically.
 
-- **Move the Above Modifed Button Test into Your Svelte Project**
+- **Move the Button Test into Your Svelte Project**
    - Svelte has a very similar sytax to HTML. One main difference is that the reactivey model in Svelte enables intuitive and efficient modification of DOM (i.e., webpage content) based on the variables defined on the script.
-   - Please change the `src/routes/+page.svelte` in your project to [the provided template](https://github.com/Visual-Intelligence-UMN/5609Visualization-Assignments/blob/main/A1/%2Bpage.svelte). Modify the file to achive the same "Remaining Number of Clicks" function described above. We have provided three tips in the template code.
+   - Please change the `src/routes/+page.svelte` in your project to [the provided template](https://github.com/Visual-Intelligence-UMN/5609Visualization-Assignments/blob/main/A1/%2Bpage.svelte). Modify the file to achive the same "Remaining Number of Clicks" function described above, and given users the ablity to modify the max click num. We have provided tips in the template code.  
+     <img width="213" alt="image" src="https://github.com/user-attachments/assets/350799fd-7dfc-4338-9a2c-ce4e830108c1" />
+
 
 References: [Offical Svelte Tutorials](https://svelte.dev/tutorial/svelte/welcome-to-svelte)
 
