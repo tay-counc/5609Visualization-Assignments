@@ -24,7 +24,7 @@
 
 ## 2. Svelte
 
-- a. **Start A Svelte Project using Svelte Kit**
+- **Start A Svelte Project using Svelte Kit**
 
    * Svelte is a modern front-end framework for building web applications. 
 Unlike traditional frameworks like React or Vue, which use a virtual DOM, Svelte shifts much of the work to the build step. 
@@ -40,11 +40,11 @@ In your terminal, find a location you like to save the project, and run `npx sv 
 (You can name it whatever you prefer, but we will assume `my-vis-5609` as the folder name for following demonstration)  
       <img width="500" alt="image" src="https://github.com/user-attachments/assets/6403d66a-8eef-4c5a-b7da-0fc97bcc2c35">
 
-- Open the `my-vis-5609` folder in VSCode.
-- Open the terminal by selecting `View > Terminal` from the menu bar, or by pressing the `⌃`` keyboard shortcut.
-- Run `npm run dev -- --open` in the terminal. The website will be open in `http://localhost:5173/`. Whenever you change the code, the website will be updated automatically.
+   - Open the `my-vis-5609` folder in VSCode.
+   - Open the terminal by selecting `View > Terminal` from the menu bar, or by pressing the `⌃`` keyboard shortcut.
+   - Run `npm run dev -- --open` in the terminal. The website will be open in `http://localhost:5173/`. Whenever you change the code, the website will be updated automatically.
 
-b. **Move the Above Modifed Button Test into Your Svelte Project**
+- **Move the Above Modifed Button Test into Your Svelte Project**
    - Svelte has a very similar sytax to HTML. One main difference is that the reactivey model in Svelte enables intuitive and efficient modification of DOM (i.e., webpage content) based on the variables defined on the script.
    - Please change the `src/routes/+page.svelte` in your project to [the provided template](https://github.com/Visual-Intelligence-UMN/5609Visualization-Assignments/blob/main/A1/%2Bpage.svelte). Modify the file to achive the same "Remaining Number of Clicks" function described above. We have provided three tips in the template code.
 
@@ -68,10 +68,10 @@ References: [Offical Svelte Tutorials](https://svelte.dev/tutorial/svelte/welcom
 
    - In your terminal, run `npm i -D --save @sveltejs/adapter-static`.
 
-   - Find the files in this A1 folder, and copy them as below for your repo (You can read [SvelteKit Guide to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages) for details):
+   - Down load files in this A1 folder, and copy them as below for your repo (You can read [SvelteKit Guide to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages) for details):
 
-        - `.github/workflows/deploy.yml` (you will need to create a `.github` folder — note the dot — and a `workflows` folder inside it. Change the `/${{ github.event.repository.name }}` to `my-vis-5609`)
-        - `svelte.config.js` (this will replace svelte.config.js file already in your project. Change `process.env.BASE_PATH` to  `my-vis-5609`).
+        - `.github/workflows/deploy.yml` (you will need to create a `.github` folder — note the dot — and a `workflows` folder inside it. )
+        - `svelte.config.js` (this will replace svelte.config.js file already in your project.)
 
 
 - Commit and push these changes to your repo.
