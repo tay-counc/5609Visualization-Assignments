@@ -43,7 +43,7 @@ In your terminal, find a location you like to save the project, and run `npx sv 
 
 - **Move the Button Test into Your Svelte Project**
    - Svelte has a very similar sytax to HTML. One main difference is that the reactivey model in Svelte enables intuitive and efficient modification of DOM (i.e., webpage content) based on the variables defined on the script.
-   - Please change the `src/routes/+page.svelte` in your project to [the provided template in this folder](https://github.com/Visual-Intelligence-UMN/5609Visualization-Assignments/blob/main/A1/%2Bpage.svelte). Modify the file to achive the same "Remaining Number of Clicks" function described above, and given users the ablity to modify the max click num. We have provided tips in the template code.  
+   - Please change the `src/routes/+page.svelte` in your project to [the provided template in this folder](https://github.com/Visual-Intelligence-UMN/5609Visualization-Assignments/blob/main/A0-Setup/A0.svelte). Modify the file to achive the same "Remaining Number of Clicks" function described above, and given users the ablity to modify the max click num. We have provided tips in the template code.  
      <img width="213" alt="image" src="https://github.com/user-attachments/assets/350799fd-7dfc-4338-9a2c-ce4e830108c1" />
 
 
