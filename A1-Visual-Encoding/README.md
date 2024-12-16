@@ -1,5 +1,5 @@
-In this assignment, we will explore summer movies ( movies with "summer" in their title ) using visualization. [This dataset]() is coming from [IMDb Non-Commercial Datasets](https://developer.imdb.com/non-commercial-datasets/).
-Please download this dataset and put it in the `static` folder of your project.
+In this assignment, we will explore summer movies ( movies with "summer" in their title ) using visualization. [This dataset](https://github.com/Visual-Intelligence-UMN/5609Visualization-Assignments/blob/main/A1-Visual-Encoding/summer_movies.csv) is coming from [IMDb Non-Commercial Datasets](https://developer.imdb.com/non-commercial-datasets/).
+Please download the dataset and put it in the `static` folder of your project.
 
 Variables in `summer_movies.csv`
 
