@@ -1,19 +1,7 @@
 <script lang="ts">
   import * as d3 from "d3";
-  import { Bar } from "$lib";
   import { onMount } from "svelte";
-
-  type TMovie = {
-    num_votes: number;
-    runtime_minutes: number;
-    genres: string[];
-    year: Date;
-    average_rating: number;
-    tconst: string;
-    title_type: string;
-    primary_title: string;
-    original_title: string;
-  };
+  import type { TMovie } from "../../types";
 
   // Reactive variable for storing the data
   let movies: TMovie[] = [];

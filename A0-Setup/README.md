@@ -1,8 +1,8 @@
 ## 0. Preparation
 - Ensure you have a code IDE like [VSCode](https://code.visualstudio.com/download) installed. While you are welcome to use any IDE of your choice, this course will assume the use of VSCode for demonstrations.
 - [Install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on your machine.
-- Ensure that you have a github account [how to register](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)
-- Make sure you have [Git installed on your computer](https://git-scm.com/downloads)
+- Ensure that you have a github account ([how to register](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)) and [apply for student education benefits](https://education.github.com/discount_requests/application). The education benefits will allow you to host GitHub Pages from private repositories, which is needed for the assignments in this class.
+- Make sure you have Git installed on your computer ([how to install](https://git-scm.com/downloads)).
 - Have a Chrome Web Browser
 
 ## 1. Preliminary Knowledge: HTML+JS+CSS
@@ -43,7 +43,7 @@ In your terminal, find a location you like to save the project, and run `npx sv 
 
 - **Move the Button Test into Your Svelte Project**
    - Svelte has a very similar sytax to HTML. One main difference is that the reactivey model in Svelte enables intuitive and efficient modification of DOM (i.e., webpage content) based on the variables defined on the script.
-   - Please change the `src/routes/+page.svelte` in your project to [the provided template in this folder](https://github.com/Visual-Intelligence-UMN/5609Visualization-Assignments/blob/main/A0-Setup/A0.svelte). Modify the file to achive the same "Remaining Number of Clicks" function described above, and given users the ablity to modify the max click num. We have provided tips in the template code.  
+   - Please copy and paste the content in the [the provided A0.svelte](https://github.com/Visual-Intelligence-UMN/5609Visualization-Assignments/blob/main/A0-Setup/A0.svelte) to the `src/routes/+page.svelte` in your project. Following the tips in the template code to achive the same "Remaining Number of Clicks" function described above, and given users the ablity to modify the max click num.   
      <img width="213" alt="image" src="https://github.com/user-attachments/assets/350799fd-7dfc-4338-9a2c-ce4e830108c1" />
 
 
@@ -56,7 +56,7 @@ In your terminal, find a location you like to save the project, and run `npx sv 
     - Sign into VSCode with your GitHub account in the Accounts menu, located in the lower right of the Activity bar.  
      <img width="150" alt="image" src="https://github.com/user-attachments/assets/7963cb4c-6457-4cbf-8ee8-049caffa2d8e"/>
 
-   - You can then use the source control feature in VSCode to initialize your repo, publish the repo to github, and commit and push changes.      
+   - You can then use the source control feature in VSCode to initialize your repo, publish the repo to github, and commit and push changes. Ensure that your github repo is private.     
       <img width="150" alt="image" src="https://github.com/user-attachments/assets/77b28a2a-3cb9-42db-97fc-a3c8e6a8e9c7">
       <img width="150" alt="image" src="https://github.com/user-attachments/assets/21d96b06-250e-44af-906e-75e676a17bb7">
 

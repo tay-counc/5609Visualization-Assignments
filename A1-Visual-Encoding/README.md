@@ -31,16 +31,22 @@ Through this process, you’ll also learn how to load data and bind them to grap
 
 
 ## 1. Load Data
-A template code has been provided in this folder. Copy and paste its content into your `src/routes/A1/+page.svelte` file.
-Follow the tips included in the template code to properly format the CSV file.
+A template code has been provided in this folder. 
+- Add the `types.ts` file to your `src` folder
+- Copy and paste the content of the `A1.svelte` into your `src/routes/A1/+page.svelte` file. Follow the tips included in the template code to properly format the CSV file.
 
 If the data is properly formated, you should see something like this in your browser's console.
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ec5275ab-63e4-4e97-b48a-993bcb196c62" />
 
 
 ## 2. Draw Genre Distribution
-Follow these step-by-step instructions to create a bar chart displaying genre distribution.
-Through this process, you’ll also learn how to bind data to graphical elements in Svelte.
+
+- Add the `Bar.svelte` to your `src/lib` folder.
+- Import and use the Bar compoenent to your A1 page `src/routes/A1/+page.svelte`:
+  - Add the import statement ```import Bar from "$lib/Bar.svelte";``` to the `<script>` section.
+  - Use the Bar component by adding  ``` <Bar {movies} /> ``` to the bottom of the file.
+- Following the tips to finalize the implementation of `Bar.svelte`.
+
 
 ## 3. Sketch Visual Designs
 For each of the following questions, sketch at least three different visual design concepts. 
@@ -52,6 +58,14 @@ Afterward, compare your sketches and explain why one design is better than the o
 
 ## 4. Implement Your Visualizations
 
-Finally, implement the chosen design for each question and report the insights gained from your visualizations.
+Finally, implement the chosen design for each question and publish them in your Github Page. 
+Report the insights gained from your visualizations.
 
 ## 5. Submission
+In Canvas, please submit a PDF report, including 
+- a) your sketches of 3x2 visualizations 
+- b) justifications for choosing the visualization for each question 
+- c) the insights you gained regarding each question from the implemented visualization
+- d) links to your github page and repository. 
+  
+Important: Do not update your main branch after the submission deadline.
