@@ -1,15 +1,11 @@
 tconst,title_type,primary_title,original_title,year,runtime_minutes,genres,simple_title,average_rating,num_votes
-tt0011462,movie,Midsummer Madness,Midsummer Madness,1920,60,Drama,midsummer madness,7.4,19
-tt0026714,movie,A Midsummer Night's Dream,A Midsummer Night's Dream,1935,133,"Comedy,Fantasy,Romance",a midsummer nights dream,6.8,3931
-tt0033864,movie,The Teachers on Summer Vacation,Magistrarna på sommarlov,1941,86,Comedy,the teachers on summer vacation,5.5,78
-tt0037325,movie,Summer Storm,Summer Storm,1944,106,"Crime,Drama,Film-Noir",summer storm,6.6,688
 tt0038406,movie,Centennial Summer,Centennial Summer,1946,102,"History,Music,Romance",centennial summer,6.1,431
 tt0038738,tvMovie,A Midsummer Night's Dream,A Midsummer Night's Dream,1946,150,"Drama,Fantasy",a midsummer nights dream,7.5,10
 tt0039354,movie,One Swallow Does Not Make a Summer,En fluga gör ingen sommar,1947,88,Comedy,one swallow does not make a summer,5.8,40
-tt0040848,movie,Summer Holiday,Summer Holiday,1948,93,Musical,summer holiday,5.7,668
-tt0041507,movie,In the Good Old Summertime,In the Good Old Summertime,1949,102,"Comedy,Musical,Romance",in the good old summertime,7.1,4358
-tt0042930,movie,Bountiful Summer,Shchedroe leto,1951,87,"Comedy,Drama,Musical",bountiful summer,5.7,112
-tt0043012,movie,Summer Stock,Summer Stock,1950,108,"Musical,Romance",summer stock,7.1,4873
+tt0040848,movie,Summer Holiday,Summer Holiday,1948,93,Music,summer holiday,5.7,668
+tt0041507,movie,In the Good Old Summertime,In the Good Old Summertime,1949,102,"Comedy,Music,Romance",in the good old summertime,7.1,4358
+tt0042930,movie,Bountiful Summer,Shchedroe leto,1951,87,"Comedy,Drama,Music",bountiful summer,5.7,112
+tt0043012,movie,Summer Stock,Summer Stock,1950,108,"Music,Romance",summer stock,7.1,4873
 tt0043313,movie,Early Summer,Bakushû,1951,125,"Comedy,Drama,Romance",early summer,8.1,9793
 tt0043652,movie,One Summer of Happiness,Hon dansade en sommar,1951,103,"Drama,Romance",one summer of happiness,6.8,900
 tt0044060,movie,Summer Interlude,Sommarlek,1951,96,"Drama,Romance",summer interlude,7.5,6724
@@ -27,7 +23,7 @@ tt0050994,movie,Summer Place Wanted,Sommarnöje sökes,1957,98,"Comedy,Drama,Rom
 tt0051791,movie,Summer Clouds,Iwashigumo,1958,128,Drama,summer clouds,7.4,385
 tt0051878,movie,"The Long, Hot Summer","The Long, Hot Summer",1958,115,Drama,the long hot summer,7.3,12523
 tt0052037,movie,The Last Day of Summer,Ostatni dzien lata,1958,66,"Drama,Romance",the last day of summer,6.9,727
-tt0052258,movie,Summer Love,Summer Love,1958,85,"Comedy,Musical,Romance",summer love,6.1,85
+tt0052258,movie,Summer Love,Summer Love,1958,85,"Comedy,Music,Romance",summer love,6.1,85
 tt0052786,movie,Violent Summer,Estate violenta,1959,98,"Drama,Romance,War",violent summer,7.3,1912
 tt0052942,movie,Jazz on a Summer's Day,Jazz on a Summer's Day,1959,88,"Documentary,Music",jazz on a summers day,7.9,1972
 tt0053261,movie,A Midsummer Night's Dream,Sen noci svatojánské,1959,76,"Animation,Comedy,Fantasy",a midsummer nights dream,7.2,478
@@ -41,11 +37,11 @@ tt0055299,movie,Summerskin,Piel de verano,1961,96,Drama,summerskin,6.9,90
 tt0055489,movie,Summer and Smoke,Summer and Smoke,1961,118,"Drama,Romance",summer and smoke,6.8,2092
 tt0056153,movie,Short Is the Summer,Kort är sommaren,1962,110,Drama,short is the summer,5.6,71
 tt0057074,movie,Summer Frenzy,Frenesia dell'estate,1964,100,Comedy,summer frenzy,6.1,114
-tt0057541,movie,Summer Holiday,Summer Holiday,1963,107,"Comedy,Musical,Romance",summer holiday,6.1,1852
-tt0057542,movie,Summer Magic,Summer Magic,1963,110,"Comedy,Family,Musical",summer magic,6.9,2762
-tt0058600,movie,Summer in Tyrol,Sommer i Tyrol,1964,99,"Comedy,Musical",summer in tyrol,6.7,1096
+tt0057541,movie,Summer Holiday,Summer Holiday,1963,107,"Comedy,Music,Romance",summer holiday,6.1,1852
+tt0057542,movie,Summer Magic,Summer Magic,1963,110,"Comedy,Family,Music",summer magic,6.9,2762
+tt0058600,movie,Summer in Tyrol,Sommer i Tyrol,1964,99,"Comedy,Music",summer in tyrol,6.7,1096
 tt0059562,movie,Crime on a Summer Morning,Par un beau matin d'été,1965,109,"Crime,Drama",crime on a summer morning,6.3,405
-tt0059771,movie,A Swingin' Summer,A Swingin' Summer,1965,80,"Comedy,Musical,Romance",a swingin summer,4.8,260
+tt0059771,movie,A Swingin' Summer,A Swingin' Summer,1965,80,"Comedy,Music,Romance",a swingin summer,4.8,260
 tt0060045,movie,10:30 P.M. Summer,10:30 P.M. Summer,1966,85,"Crime,Drama,Romance",1030 pm summer,6.4,773
 tt0060371,movie,The Endless Summer,The Endless Summer,1966,95,"Documentary,Sport",the endless summer,7.6,6298
 tt0060694,movie,A Midsummer Night's Dream,A Midsummer Night's Dream,1967,93,Music,a midsummer nights dream,7.3,31
@@ -118,7 +114,7 @@ tt0084636,movie,Klynham Summer,The Scarecrow,1982,88,"Horror,Mystery,Thriller",k
 tt0084737,movie,Summer Lovers,Summer Lovers,1982,98,"Comedy,Drama,Romance",summer lovers,5.8,4534
 tt0084957,movie,A Hot Summer Night,Een zwoele zomeravond,1982,95,Comedy,a hot summer night,7.1,42
 tt0085241,movie,Bicycles Are for the Summer,Las bicicletas son para el verano,1984,103,Drama,bicycles are for the summer,7.3,891
-tt0086332,movie,A Midsummer Night's Dream,Sogno di una notte d'estate,1983,104,"Comedy,Musical",a midsummer nights dream,5.4,81
+tt0086332,movie,A Midsummer Night's Dream,Sogno di una notte d'estate,1983,104,"Comedy,Music",a midsummer nights dream,5.4,81
 tt0086385,tvMovie,Summer Girl,Summer Girl,1983,96,Drama,summer girl,6.2,173
 tt0086387,movie,Summerspell,Summerspell,1983,100,"Biography,Drama",summerspell,5.2,118
 tt0086655,movie,One Deadly Summer,L'été meurtrier,1983,133,"Drama,Mystery",one deadly summer,7.2,5468
@@ -206,7 +202,6 @@ tt0130018,movie,I Still Know What You Did Last Summer,I Still Know What You Did 
 tt0131432,movie,How I Spent My Summer Vacation,How I Spent My Summer Vacation,1997,73,Comedy,how i spent my summer vacation,7.2,108
 tt0133893,movie,Summer Rebellion,Kesäkapina,1970,81,"Comedy,Drama",summer rebellion,5.9,170
 tt0134148,movie,Three Summer Days,Tri letnja dana,1997,90,Drama,three summer days,6.1,286
-tt0134719,movie,Her Summer Hero,Her Summer Hero,1928,60,Comedy,her summer hero,4.3,12
 tt0137618,movie,Fruits of Summer,Les fruits de l'été,1955,105,"Comedy,Romance",fruits of summer,5.4,21
 tt0137875,movie,This Summer at 5,Kesällä kello 5,1963,75,"Drama,Romance",this summer at 5,5.6,126
 tt0139684,movie,Stormy Summer,Un été d'orages,1989,95,Drama,stormy summer,5.7,52
@@ -248,7 +243,6 @@ tt0217066,tvMovie,A Storm in Summer,A Storm in Summer,2000,94,Drama,a storm in s
 tt0218643,tvMovie,Summer in the Suburbs,Summer in the Suburbs,2000,90,"Crime,Drama",summer in the suburbs,6.2,72
 tt0218932,tvMovie,The Last Summer,Le dernier été,1997,81,"Biography,Drama,History",the last summer,6.6,74
 tt0220077,movie,The Summer Intern,The Summer Intern,2000,116,NA,the summer intern,6.4,17
-tt0221249,movie,Summer Hotel,Hotel de verano,1944,95,"Comedy,Drama,Music",summer hotel,6,13
 tt0226121,movie,Summer of Evil,Masho no natsu - 'Yotsuya kaidan' yori,1981,96,"Crime,Drama,Horror",summer of evil,4.6,28
 tt0228584,movie,One Day at Summer's End,Nureta futari,1968,82,Drama,one day at summers end,5.7,32
 tt0234829,movie,Summer Catch,Summer Catch,2001,104,"Comedy,Drama,Romance",summer catch,5.1,16750
@@ -521,7 +515,7 @@ tt1408355,movie,Boys of Summer,Boys of Summer,2010,95,"Documentary,Sport",boys o
 tt1418860,movie,Crime Scene: The Bobby Ray Summers Story,Crime Scene: The Bobby Ray Summers Story,2008,76,Comedy,crime scene the bobby ray summers story,8,17
 tt1422201,tvMovie,One Hot Summer,One Hot Summer,2009,89,Comedy,one hot summer,4.1,266
 tt14442616,movie,Cruel Summer,Cruel Summer,2021,80,Horror,cruel summer,3.3,121
-tt14456750,movie,Phantom Summer,Verão Fantasma,2022,106,"Horror,Musical",phantom summer,6,54
+tt14456750,movie,Phantom Summer,Verão Fantasma,2022,106,"Horror,Music",phantom summer,6,54
 tt1448625,movie,The Old Summer Palace,Yuan Ming Yuan,2006,93,Documentary,the old summer palace,7.6,80
 tt14550346,movie,Last Summer,L'été dernier,2023,104,"Drama,Thriller",last summer,6.3,2231
 tt14619078,movie,My Soul Summer,My Soul Summer,2022,115,"Drama,Music",my soul summer,6.5,55
@@ -578,7 +572,7 @@ tt17382524,movie,"The Tunnel to Summer, the Exit of Goodbyes","Natsu e no tunnel
 tt1740053,movie,A Burning Hot Summer,Un été brûlant,2011,95,Drama,a burning hot summer,5,2365
 tt1753865,movie,Summer Games,Giochi d'estate,2011,101,"Drama,Romance",summer games,6.5,441
 tt1754192,tvMovie,A Good Summer,Ein guter Sommer,2011,90,Drama,a good summer,7,66
-tt17542524,movie,Shall I Compare You to a Summer's Day?,Bashtaalak sa'at,2022,66,"Drama,Musical",shall i compare you to a summers day,5.9,175
+tt17542524,movie,Shall I Compare You to a Summer's Day?,Bashtaalak sa'at,2022,66,"Drama,Music",shall i compare you to a summers day,5.9,175
 tt1754719,movie,The Summer of 69,The Summer of 69,2009,NA,Comedy,the summer of 69,7.9,14
 tt1758771,movie,Summer of Dreams,Summer of Dreams,2011,123,"Drama,Family,Music",summer of dreams,5.3,19
 tt1764618,movie,Summertime Killers,Summertime Killers,2011,33,"Crime,Drama",summertime killers,6,11
@@ -639,8 +633,8 @@ tt2184287,movie,Summer in February,Summer in February,2013,100,"Biography,Drama,
 tt21882432,video,Mugler: Spring Summer 2022,Mugler: Spring Summer 2022,2022,9,"Music,Short",mugler spring summer 2022,4.3,18
 tt2188926,tvMovie,Strawberry Summer,Strawberry Summer,2012,120,Family,strawberry summer,5.8,834
 tt21906990,movie,Summer Frost,Un hiver en été,2022,112,Drama,summer frost,4.5,131
-tt2196053,movie,Something Like Summer,Something Like Summer,2017,115,"Drama,Musical,Romance",something like summer,6,1541
-tt22002112,movie,The Summer of Our Love,Mezhdu nami leto,2024,113,"Comedy,Drama,Musical",the summer of our love,5.9,42
+tt2196053,movie,Something Like Summer,Something Like Summer,2017,115,"Drama,Music,Romance",something like summer,6,1541
+tt22002112,movie,The Summer of Our Love,Mezhdu nami leto,2024,113,"Comedy,Drama,Music",the summer of our love,5.9,42
 tt22197856,movie,Summer Brother,Zomervacht,2023,100,Drama,summer brother,7.5,199
 tt2221484,movie,The Last Soul on a Summer Night,The Last Soul on a Summer Night,2012,85,"Drama,Mystery",the last soul on a summer night,8.2,18
 tt2221727,movie,Last Summer Won't Happen,Last Summer Won't Happen,1968,68,Documentary,last summer wont happen,7.1,16
@@ -650,7 +644,7 @@ tt2253116,tvMovie,Summer Kiss,Summer Kiss,1987,NA,Romance,summer kiss,7.2,28
 tt2265352,movie,Love Summer,Love Summer,2011,110,Comedy,love summer,6,93
 tt2279984,movie,The Summer Before,The Summer Before,2012,74,"Comedy,Drama",the summer before,6.9,17
 tt2291980,movie,Summer with Selik,Summer with Selik,1992,53,"Documentary,Family",summer with selik,7.8,17
-tt2310958,movie,Summertime,Summertime,2012,93,"Comedy,Horror,Musical",summertime,3.2,231
+tt2310958,movie,Summertime,Summertime,2012,93,"Comedy,Horror,Music",summertime,3.2,231
 tt2322240,movie,Indian Summer,Indian Summer,2013,84,Documentary,indian summer,8.4,10
 tt2326400,tvMovie,Summer Intensive,Summer Intensive,2012,NA,Biography,summer intensive,9.4,52
 tt2327275,tvMovie,Summer in Alsace,Ein Sommer im Elsass,2012,89,Comedy,summer in alsace,5.6,55
@@ -770,7 +764,7 @@ tt4464176,tvMovie,"The Summer of Rave, 1989","The Summer of Rave, 1989",2006,60,
 tt4469200,movie,The Dog Who Saved Summer,The Dog Who Saved Summer,2015,89,Family,the dog who saved summer,4.6,252
 tt4469246,tvMovie,Summer Vacation,Otpusk letom,2015,90,Drama,summer vacation,5.8,26
 tt4590870,tvMovie,The Summer of the Cans,The Summer of the Cans,2014,59,"Crime,Documentary,History",the summer of the cans,8.1,20
-tt4648826,movie,Summer Forever,Summer Forever,2015,95,Musical,summer forever,5.6,220
+tt4648826,movie,Summer Forever,Summer Forever,2015,95,Music,summer forever,5.6,220
 tt4650414,movie,Summertime,L'estate addosso,2016,103,Drama,summertime,6.2,1773
 tt4672158,video,It's Summer! It's Swimsuits! It's Training Camp!,It's Summer! It's Swimsuits! It's Training Camp!,2012,24,"Animation,Comedy",its summer its swimsuits its training camp,8.3,34
 tt4711486,movie,Summer on the Frontline,Soman kokkyô 15 sai no natsu,2015,94,Drama,summer on the frontline,4,10
@@ -865,7 +859,7 @@ tt7428820,movie,Summer Night,Summer Night,2019,98,"Comedy,Drama",summer night,4.
 tt7476812,movie,One Summer Afternoon,One Summer Afternoon,2019,78,Drama,one summer afternoon,4.9,43
 tt7481324,movie,Summer Holidays,Ta'tilat-e tabestani,1996,NA,NA,summer holidays,5.1,18
 tt7502220,tvMovie,Alaskan Summer,Alaskan Summer,2017,60,Documentary,alaskan summer,7.2,32
-tt7543058,movie,Best Summer Ever,Best Summer Ever,2020,72,Musical,best summer ever,5.2,174
+tt7543058,movie,Best Summer Ever,Best Summer Ever,2020,72,Music,best summer ever,5.2,174
 tt7556356,movie,Summer in the Shade,Summer in the Shade,2020,84,"Drama,Mystery",summer in the shade,6.4,62
 tt7591430,movie,Summer Survivors,Ishgyventi vasara,2018,91,Drama,summer survivors,7.5,1642
 tt7612992,movie,A Long Hot Summer in Palestine,A Long Hot Summer in Palestine,2018,74,Documentary,a long hot summer in palestine,8.1,12
