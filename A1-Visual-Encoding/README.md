@@ -34,6 +34,10 @@ Through this process, you’ll also learn how to load data and bind them to grap
 A template code has been provided in this folder. Copy and paste its content into your `src/routes/A1/+page.svelte` file.
 Follow the tips included in the template code to properly format the CSV file.
 
+If the data is properly formated, you should see something like this in your browser's console.
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/ec5275ab-63e4-4e97-b48a-993bcb196c62" />
+
+
 ## 2. Draw Genre Distribution
 Follow these step-by-step instructions to create a bar chart displaying genre distribution.
 Through this process, you’ll also learn how to bind data to graphical elements in Svelte.
@@ -49,3 +53,5 @@ Afterward, compare your sketches and explain why one design is better than the o
 ## 4. Implement Your Visualizations
 
 Finally, implement the chosen design for each question and report the insights gained from your visualizations.
+
+## 5. Submission
