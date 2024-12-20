@@ -1,8 +1,10 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: "main" # your branch name, it can be master sometimes
+    branches: 'main' # Trigger on pushes to the main branch. 
+    # Ensure the branch name matches your repository's default branch, 
+    # as it might still be named 'master' in some cases.
 
 jobs:
   build_site:
@@ -10,12 +12,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      # If you're using pnpm, add this step then change the commands and cache key below to use `pnpm`
-      # - name: Install pnpm
-      #   uses: pnpm/action-setup@v3
-      #   with:
-      #     version: 8
 
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -28,16 +24,18 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: "/my-vis-5609"
+           BASE_PATH: '/my-vis-5609'
         run: npm run build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # this should match the `pages` option in your adapter-static options
-          path: "build/"
+ # this should match the `pages` option in your adapter-static options
+           path: 'build/'
 
   deploy:
+    # only deploy the changes to github page when you commit message contains "publish"
+    if: contains(github.event.head_commit.message, 'publish')  
     needs: build_site
     runs-on: ubuntu-latest
 
