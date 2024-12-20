@@ -7,7 +7,7 @@
 
 ## 1. Preliminary Knowledge: HTML+JS+CSS
 
-   - This class assumes you have basic knowledge of web development. However, here's a quick refresher to jog your memory.
+   - This class assumes you have basic knowledge of web development. However, here's a quick refresher to jog your memory.  
       <img width="500" alt="image" src="https://github.com/user-attachments/assets/c39cfa55-87fe-441f-bcf1-d65ff90c9f74">
 
    - In your VSCode, create an `index.html` file as the one shown above.
@@ -54,7 +54,7 @@ In your terminal, find a location you like to save the project, and run `npx sv 
 
 - **Create A Github Repository** 
     - Sign into VSCode with your GitHub account in the Accounts menu, located in the lower right of the Activity bar.  
-     <img width="150" alt="image" src="https://github.com/user-attachments/assets/7963cb4c-6457-4cbf-8ee8-049caffa2d8e"/>
+      <img width="150" alt="image" src="https://github.com/user-attachments/assets/7963cb4c-6457-4cbf-8ee8-049caffa2d8e"/>
 
    - You can then use the source control feature in VSCode to initialize your repo, publish the repo to github, and commit and push changes. Ensure that your github repo is private.     
       <img width="150" alt="image" src="https://github.com/user-attachments/assets/77b28a2a-3cb9-42db-97fc-a3c8e6a8e9c7">
@@ -67,9 +67,9 @@ In your terminal, find a location you like to save the project, and run `npx sv 
 
    - In your terminal, run `npm i -D --save @sveltejs/adapter-static`.
 
-   - Down load files in this A1 folder, and copy them as below for your repo (You can read [SvelteKit Guide to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages) for details):
+   - Download files in this A1 folder, and copy them as below for your repo (You can read [SvelteKit Guide to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages) for details):
 
-      - `.github/workflows/deploy.yml` (you will need to create a `.github` folder — note the dot — and a `workflows` folder inside it. )
+      - `.github/workflows/build-and-deploy.yml` (you will need to create a `.github` folder — note the dot — and a `workflows` folder inside it. )
       - `svelte.config.js` (this will replace svelte.config.js file already in your project.)
 
 
