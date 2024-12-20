@@ -35,7 +35,7 @@ A template code has been provided in this folder.
 - Add the `types.ts` file to your `src` folder
 - Copy and paste the content of the `A1.svelte` into your `src/routes/A1/+page.svelte` file. Follow the tips included in the template code to properly format the CSV file.
 
-If the data is properly formated, you should see something like this in your browser's console.
+If the data is properly formated, you should see something like this in your browser's console (we will draw the bar chart in step 2).
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ec5275ab-63e4-4e97-b48a-993bcb196c62" />
 
 
