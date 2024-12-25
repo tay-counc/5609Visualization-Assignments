@@ -79,7 +79,10 @@ In your terminal, find a location you like to save the project, and run `npx sv 
    To see our GitHub Action in action (no pun intended 🙃), navigate to the “Actions” tab on your GitHub repo. You’ll be able to see both actions that are currently running, as well as past ones.
 
 ## 4. Submission
-Please submit the URL of your github page in Canvas.
+Please submit the URLs of a) your public github page and b) private github repo in Canvas.
+
+Ensure that you have added the [instructor](https://github.com/wangqianwen0418) and [TA]() to your private github repo so that we can access your source code, though most of the time, the grading does not depends on the source code.
+You will work on the same repo for the remainder of the semester.
 
 
 
