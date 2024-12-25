@@ -35,7 +35,7 @@ A template code has been provided in this folder.
 - Add the `types.ts` file to your `src` folder
 - Copy and paste the content of the `A1.svelte` into your `src/routes/A1/+page.svelte` file. Follow the tips included in the template code to properly format the CSV file.
 
-If the data is properly formated, you should see something like this in your browser's console.
+If the data is properly formated, you should see something like this in your browser's console (we will draw the bar chart in step 2).
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/ec5275ab-63e4-4e97-b48a-993bcb196c62" />
 
 
@@ -49,11 +49,11 @@ If the data is properly formated, you should see something like this in your bro
 
 
 ## 3. Sketch Visual Designs
-For each of the following questions, sketch at least three different visual design concepts. 
-Aim to explore diverse visual encodings for each. 
+For each of the following questions, sketch at least three different visualization designs. 
+Aim to explore diverse visual encodings for each question. 
 Afterward, compare your sketches and explain why one design is better than the others in effectively addressing the question.
 
-- Q1: How do the genres with the top 3 number of movies change over time?
+- Q1: How do the top three movie genres (by number of movies) change over time??
 - Q2: Are there any correlations between different genres? For example, which genre often co-occurs with comedy?
 
 ## 4. Implement Your Visualizations
@@ -64,8 +64,9 @@ Report the insights gained from your visualizations.
 ## 5. Submission
 In Canvas, please submit a PDF report, including 
 - a) your sketches of 3x2 visualizations 
-- b) justifications for choosing the visualization for each question 
-- c) the insights you gained regarding each question from the implemented visualization
-- d) links to your github page and repository. 
+- b) justifications for choosing one visualization over others for each question
+- c) a screenshot of the two implemented visualizations
+- d) the insights you gained regarding each question from the implemented visualization
+- e) links to your github page and repository. 
   
 Important: Do not update your main branch after the submission deadline.
