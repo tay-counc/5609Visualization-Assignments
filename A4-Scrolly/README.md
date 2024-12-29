@@ -1,7 +1,9 @@
 # A4: Scrollytelling
 
-## Requirements
+## Your Tasks
 For your final assignment, no more *'fill-in-the-blank'* to replicate the demo. Instead, you’ll work with the same code from the demo to learn how the scrolly effect is programmed and make required modifications as bleow. (Of course, we’ll provide detailed explanations about the scrolly component).
+
+Simply add the A4 folder provided here into your `src/routes` folder, you will see a scrollytelling at `http://localhost:5173/A4`.
 
 1. **Improve the 2D bar chart** 
    While it is fun to observe the changes of genre distribution year by year, it violates the "eyes beat memory" guide: it is hard to anwser the questions such as how has the genre distribution changed compared with 10 years ago. 
