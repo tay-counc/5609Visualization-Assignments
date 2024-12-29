@@ -4,30 +4,38 @@
   // define the props of the Bar component
   type Props = {
     movies: TMovie[];
+    progress?: number;
     width?: number;
     height?: number;
   };
- 
-  let { movies, width = 500, height = 400 }: Props = $props();
+  // progress is 100 by default unless specified
+  let { movies, progress = 100, width = 500, height = 400 }: Props = $props();
 
-  let selectedGenre: string = $state(); // indicates the genre that is currently being hovered over
+  let selectedGenre: string = $state();
 
   // processing the data; $derived is used to create a reactive variable that updates whenever the dependent variables change
   const yearRange = $derived(d3.extent(movies.map((d) => d.year)));
 
-  
+  function getUpYear(yearRange: [undefined, undefined] | [Date, Date]) {
+    if (!yearRange[0]) return new Date();
+    const timeScale = d3.scaleTime().domain(yearRange).range([0, 100]);
+    return timeScale.invert(progress);
+  }
+  const upYear: Date = $derived(getUpYear(yearRange!));
 
-  function getGenreNums(movies: TMovie[]) {
+  function getGenreNums(movies: TMovie[], upYear: Date) {
     let res: { [genre: string]: number } = {};
-    // Tip: Process the data here to get the number of movies for each genre
-    //  
-    //  
-    //  
-    //  
+    movies
+      .filter((movie) => movie.year <= upYear)
+      .forEach((movie) => {
+        movie.genres.forEach((genre: string) => {
+          res[genre] = (res[genre] || 0) + 1;
+        });
+      });
     return res;
   }
 
-  const genreNums = $derived(getGenreNums(movies));
+  const genreNums = $derived(getGenreNums(movies, upYear));
 
   // drawing the bar chart
 
@@ -74,7 +82,8 @@
       .attr("transform", "rotate(45)")
       .style("text-anchor", "start");
 
-    d3.select(yAxis).call(d3.axisLeft(yScale));
+    // tip:
+    // similar to the x-axis, create a y-axis using d3.axisLeft() and bind it to the yAxis variable
   }
 
   // the $effect function is used to run a function whenever the reactive variables change, also known as a side effect
