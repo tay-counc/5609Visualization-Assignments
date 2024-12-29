@@ -1,5 +1,5 @@
 ## Preparation
-We will continue use the code code we developed in A0. 
+We will continue using the project folder from A0. 
 Please move the `src/routes/+page.svelte` you created in A1 into `src/routes/A0/+page.svelte`, which can be accessed via `http://localhost:5173/A0`. 
 Similarly, we will create `src/routes/A1/+page.svelte` for this assignment.
 
@@ -36,8 +36,10 @@ A template code has been provided in this folder.
 - Add the `types.ts` file to your `src` folder
 - Copy and paste the content of the `A1.svelte` into your `src/routes/A1/+page.svelte` file. Follow the tips included in the template code to properly format the CSV file.
 
-If the data is properly formated, you should see something like this in your browser's console (we will draw the bar chart in step 2).
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/ec5275ab-63e4-4e97-b48a-993bcb196c62" />
+If the data is properly formated, you should see something like this in your browser's console (we will draw the bar chart in step 2).  
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/7beb6da8-4205-48b3-8ec8-476d16d5785d" />
+
+
 
 
 ### 2. Draw Genre Distribution
@@ -58,7 +60,7 @@ If the data is properly formated, you should see something like this in your bro
 ### 3. Sketch Visual Designs
 For each of the following questions, sketch at least three different visualizations. 
 Please explore diverse visual encodings for each question. 
-Afterward, compare your sketches and explain why one design is better than the others in effectively addressing the question.
+Afterward, compare your sketches and decide one design that is better than the others in effectively addressing the question.
 
 - Q1: How do the top three movie genres (by number of movies) change over time?
 - Q2: Are there any correlations between different genres? For example, which genre often co-occurs with comedy in a movie?
@@ -84,11 +86,11 @@ In Canvas, please submit a PDF report, including
 |--------------------------------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------|
 | **Data Loading (1 pts)**               | Data loads without errors and is formatted correctly.                                         |       | Dataset loads but is incorrectly formatted  |
 | **Genre Distribution (1 pts)**    | Bar chart works as shown in the demo, with clear labeling and hover-on interactions.         | Bar chart works but lacks clear labeling (e.g., axis, numbers on bars) or hover interactions. | Bar chart has obvious bugs or fails to display data correctly.       |
-| **Q1: Sketch Visualizations (1.5 pts)**| Provides 3 diverse designs, explains visual encodings clearly (e.g., axes, color, size) | Designs overlap significantly, or explanations lack clarity.   | Fewer than 3 designs are provided, or explanations are missing. |
+| **Q1: Sketch Visualizations (1.5 pts)**| Provides 3 diverse designs, explains visual encodings clearly (e.g., axes, color, size) | Designs overlap significantly, or explanations lack clarity.   | Fewer than 3 designs are provided, or none of the 3 designs can anwser the question. |
 | **Q1: Choose One Design (0.5 pts)**        | Justifies why chosen a certain design    |     | Justification is vague or incomplete.         |
 | **Q1: Implement Visualizations (1.4)** | The chosen visualization is implemented. | Visualization works but lacks clear labeling. | Implementation has obvious bugs. |
 | **Q1: Report Insights (0.6 pts)**      | A short paragraph clearly answers the question using the visualization. |      | A paragraph is provided but lacks clarity or insight |
-| **Q2: Sketch Visualizations (1.5 pts)**| Provides 3 diverse designs, explains visual encodings clearly (e.g., axes, color, size) | Designs overlap significantly, or explanations lack clarity.   | Fewer than 3 designs are provided, or explanations are missing. |
+| **Q2: Sketch Visualizations (1.5 pts)**| Provides 3 diverse designs, explains visual encodings clearly (e.g., axes, color, size) | Designs overlap significantly, or explanations lack clarity.   | Fewer than 3 designs are provided, or none of the 3 designs can anwser the question. |
 | **Q2: Choose One Design (0.5 pts)**        | Justifies why chosen a certain design    |     | Justification is vague or incomplete.         |
 | **Q2: Implement Visualizations (1.4)** | The chosen visualization is implemented. | Visualization works but lacks clear labeling. | Implementation has obvious bugs. |
 | **Q2: Report Insights (0.6 pts)**      | A short paragraph clearly answers the question using the visualization. |      | A paragraph is provided but lacks clarity or insight |
