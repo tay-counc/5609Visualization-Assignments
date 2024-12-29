@@ -11,15 +11,12 @@
     try {
       const csvUrl = "./summer_movies.csv";
       movies = await d3.csv(csvUrl, (row) => {
-        // in row, all values are strings, so we need to use row conversion function to format them
+        // TIP: in row, all values are strings, so we need to use a row conversion function here to format them
         return {
-          ...row, //
-          num_votes: Number(row.num_votes),
-          year: new Date(row.year),
-          // TIP: please also format the values for the following attributes
-          // runtime_minutes: ,
-          // genres: ,
-          // average_rating: ,
+          // ...row, // spread syntax to copy all properties from row
+          // num_votes: Number(row.num_votes),
+          // year: new Date(row.year),
+          // please also format the values for other non-string attributes. You can check the attributes in the CSV file
         };
       });
 

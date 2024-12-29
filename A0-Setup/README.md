@@ -43,7 +43,8 @@ In your terminal, find a location you like to save the project, and run `npx sv 
 
 - **Move the Button Test into Your Svelte Project**
    - Svelte has a very similar sytax to HTML. One main difference is that the reactivey model in Svelte enables intuitive and efficient modification of DOM (i.e., webpage content) based on the variables defined on the script.
-   - Please copy and paste the content in the [the provided A0.svelte](https://github.com/Visual-Intelligence-UMN/5609Visualization-Assignments/blob/main/A0-Setup/A0.svelte) to the `src/routes/+page.svelte` in your project. Following the tips in the template code to achive the same "Remaining Number of Clicks" function described above, and given users the ablity to modify the max click num.   
+  
+   - Please copy and paste the content in the [the provided A0.svelte](https://github.com/Visual-Intelligence-UMN/5609Visualization-Assignments/blob/main/A0-Setup/A0.svelte) to the `src/routes/+page.svelte` in your project. Following the instructions in the template code to achive the same "Remaining Number of Clicks" function described above, and given users the ablity to modify the max click num. Comments start with `tip` indicate the sections you need to complete.   
      <img width="213" alt="image" src="https://github.com/user-attachments/assets/350799fd-7dfc-4338-9a2c-ce4e830108c1" />
 
 
@@ -67,9 +68,9 @@ In your terminal, find a location you like to save the project, and run `npx sv 
 
    - In your terminal, run `npm i -D --save @sveltejs/adapter-static`.
 
-   - Download files in this A1 folder, and copy them as below for your repo (You can read [SvelteKit Guide to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages) for details):
+   - Download files in this A1 folder, and copy them as below for your repo (You can also read [SvelteKit Guide to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages) for details):
 
-      - `.github/workflows/build-and-deploy.yml` (you will need to create a `.github` folder — note the dot — and a `workflows` folder inside it. )
+      - `.github/workflows/build-and-deploy.yml`: you will need to create a `.github` folder (note the dot!) and a `workflows` folder inside it. 
       - `svelte.config.js` (this will replace svelte.config.js file already in your project.)
 
 
@@ -84,7 +85,14 @@ Please submit the URLs of a) your public github page and b) private github repo 
 Ensure that you have added the [instructor](https://github.com/wangqianwen0418) and [TA]() to your private github repo so that we can access your source code, though most of the time, the grading does not depends on the source code.
 You will work on the same repo for the remainder of the semester.
 
+**Grading:**
 
+- [1 pt] Publicly accessible URL to your Github Page
+- [1 pt] Private github repo where the instructor and the TA has been invited to
+- [3 pts] Functionable Demo:
+   - All DOMs are present (images, text, button) (1 pt)
+   - The text updates correctly with each button click (1 pt)
+   - Users are able to change the allowed number of clicks (1 pt)
 
 
 

@@ -29,12 +29,11 @@
   </div>
   <button onclick={onClick}> Click Me </button>
 
-  <!-- tip: No need to write code here, just want to point it out that the content below will automatically update when cnt value changes -->
-  {#if cnt > 0}
+  <!-- tip: use {#if...} template syntax here (https://svelte.dev/docs/svelte/if) so that the content below will automatically update when cnt value changes -->
+    <!-- `the content below should only show when cnt >0` -->
     <p id="info">Remaining Number of Clicks: {cnt}</p>
-  {:else}
+    <!-- The content below should only shown when cnt =0 -->
     <p>No more clicks allowed</p>
-  {/if}
   
   
   <style>
