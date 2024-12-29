@@ -14,7 +14,7 @@ As usually, we have created some template code for you to start working with.
   ```
 - Copy and Paste the content of `A2.svelte` into `src/routes/A2/+page.svelte` (create the `A2` folder and the `+page.svelte` file yourself).
 
-  After this, you should see something similar to the demo at `http://localhost:5173/A2`. It will resemble the demo, but without interactions and missing the line in the line chart.
+  After this, run `npm run dev`, you should see a dashboard at `http://localhost:5173/A2`. It will resemble the demo, but without interactions and missing the line in the line chart.
 
 - Complete the following required functions as per the instructions provided in the template code. As usually, comments starting with `tip` indicate the section you work on. I used tip1, tip2, tip3, and tip4 for each of the required functions.
   - 1. Implement click interaction in the scatter plot (0.5 pt)  
