@@ -5,9 +5,9 @@
 - Make sure you have Git installed on your computer ([how to install](https://git-scm.com/downloads)).
 - Have a Chrome Web Browser
 
-## 1. Preliminary Knowledge: HTML+JS+CSS
+## 1. Preliminary Knowledge: HTML+JS+CSS (Optional)
 
-   - This class assumes you have basic knowledge of web development. However, here's a quick refresher to jog your memory.  
+   - This class assumes you have basic knowledge of web development. However, here's an optional quick refresher to jog your memory.  
       <img width="500" alt="image" src="https://github.com/user-attachments/assets/c39cfa55-87fe-441f-bcf1-d65ff90c9f74">
 
    - In your VSCode, create an `index.html` file as the one shown above.
