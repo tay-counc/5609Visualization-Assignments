@@ -38,7 +38,7 @@ In your terminal, find a location you like to save the project, and run `npx sv 
    - Open the terminal by selecting `View > Terminal` from the menu bar.
 
    - Run `npm run dev -- --open` in the terminal. The website will be open in `http://localhost:5173/`. Whenever you change the code, the website will be updated automatically.
-   - Install Svelte for VSCode Extension will make your development and debug much easier, highly recommended. You may need to do some [simple setup of the formatter](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
+   - Install Svelte for VSCode Extension will make your development and debug much easier, highly recommended. You may need to do some [simple setup of the formatter](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)  
      <img width="450" alt="image" src="https://github.com/user-attachments/assets/a0bf994d-ffc2-46b4-8e05-4d93002c2bf2"/>
 
 - **Move the Button Test into Your Svelte Project**
