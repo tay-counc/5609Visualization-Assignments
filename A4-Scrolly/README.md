@@ -44,7 +44,7 @@ For your final assignment, no more *'fill-in-the-blank'* to replicate the demo. 
 
 ## Scrolly Tutorials
 1. **Using a Scrolly:**
-   First, `import Scrolly from "$lib"`. Then you can create a scrollytelling component using:
+   First, `import {Scroll} from "$lib"`. Then you can create a scrollytelling component using:
    ```svelte
    <script>
    let myProgress = $state(0)
