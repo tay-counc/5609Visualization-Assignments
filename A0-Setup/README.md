@@ -12,12 +12,12 @@
 
    - In your VSCode, create an `index.html` file as the one shown above.
 
-   - Open it in your chrome browser and you will see a webpage like below. Please the button will change the shwoing number of clicks.  
+   - Open it in your chrome browser and you will see a webpage like below. Press the button will change the shwoing number of clicks.  
       <img width="150" alt="image" src="https://github.com/user-attachments/assets/ddbc6d63-04c8-4a68-8845-882e99698c98">
 
    - **Modify the webpage to refresh your memory**
      -  [modify the style] change the background color of the button to `#44aa66`, modify the button font size to  `font-size: xx-large`
-     - [modift the webpage content] as shown below
+     - [modify the webpage content] as shown below
      - [modify the function] Display the remaining number of clicks. After 5 clicks, show an alert: "No more clicks remaining!".
       <img width="150" alt="image" src="https://github.com/user-attachments/assets/cdac5565-8026-4e8c-98c2-ab4a16850773">
 
@@ -68,7 +68,7 @@ In your terminal, find a location you like to save the project, and run `npx sv 
 
    - In your terminal, run `npm i -D --save @sveltejs/adapter-static`.
 
-   - Download files in this A1 folder, and copy them as below for your repo (You can also read [SvelteKit Guide to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages) for details):
+   - Download files in this A0 folder, and copy them as below for your repo (You can also read [SvelteKit Guide to deploy to GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages) for details):
 
       - `.github/workflows/build-and-deploy.yml`: you will need to create a `.github` folder (note the dot!) and a `workflows` folder inside it. 
       - `svelte.config.js` (this will replace svelte.config.js file already in your project.)
