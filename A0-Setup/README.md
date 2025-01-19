@@ -30,9 +30,12 @@
 
 
    * SvelteKit provides an easy way to start a Svelte Project.
-In your terminal, find a location you like to save the project, and run `npx sv create my-vis-5609` 
-(You can name it whatever you prefer, but we will assume `my-vis-5609` as the folder name for following demonstration)  
-      <img width="500" alt="image" src="https://github.com/user-attachments/assets/6403d66a-8eef-4c5a-b7da-0fc97bcc2c35">
+In your terminal, find a location you like to save the project, and run `npx sv create FOLDERNAME` 
+(You can name it whatever you prefer, but we will assume `my-vis-5609` as the folder name for following demonstration)
+
+      ℹ️ **Note:** This folder `FOLDERNAME` will be used for all assignments in this course. You can name it whatever you prefer.
+   
+        <img width="500" alt="image" src="https://github.com/user-attachments/assets/6403d66a-8eef-4c5a-b7da-0fc97bcc2c35">
 
    - Open the `my-vis-5609` folder in VSCode.
    - Open the terminal by selecting `View > Terminal` from the menu bar.
@@ -72,11 +75,12 @@ In your terminal, find a location you like to save the project, and run `npx sv 
 
       - `.github/workflows/build-and-deploy.yml`: you will need to create a `.github` folder (note the dot!) and a `workflows` folder inside it. 
       - `svelte.config.js` (this will replace svelte.config.js file already in your project.)
+      - Open `svelte.config.js` and change 'my-vis-5609' to your own `FOLDERNAME` if you used a different one.
 
 
    - Commit and push these changes to your repo.
 
-   If all goes well, your app should be deployed to `YOUR_USERNAME.github.io/my-vis-5609`.  
+   If all goes well, your app should be deployed to `YOUR_USERNAME.github.io/FOLDERNAME`.  
    To see our GitHub Action in action (no pun intended 🙃), navigate to the “Actions” tab on your GitHub repo. You’ll be able to see both actions that are currently running, as well as past ones.
 
 ## 4. Submission
