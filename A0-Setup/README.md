@@ -1,7 +1,7 @@
 ## 0. Preparation
 - Ensure you have a code IDE like [VSCode](https://code.visualstudio.com/download) installed. While you are welcome to use any IDE of your choice, this course will assume the use of VSCode for demonstrations.
 - [Install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on your machine.
-- Ensure that you have a github account ([how to register](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)) and [apply for student education benefits](https://education.github.com/discount_requests/application). The education benefits will allow you to host GitHub Pages from private repositories, which is needed for the assignments in this class.
+- Ensure that you have a github account ([how to register](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)) and [apply for student education benefits](https://education.github.com/discount_requests/application). The education benefits will allow you to host GitHub Pages from private repositories, which is needed for the assignments in this class. You will need **a personal github account (github.com)** rather than a UMN one (github.umn.edu), the latter does not allow github page.
 - Make sure you have Git installed on your computer ([how to install](https://git-scm.com/downloads)).
 - Have a Chrome Web Browser
 
