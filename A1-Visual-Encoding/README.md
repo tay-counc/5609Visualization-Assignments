@@ -90,7 +90,7 @@ In Canvas, please submit a PDF report, including
 | **Q1: Choose One Design (0.5 pts)**        | Justifies why chosen a certain design    |     | Justification is vague or incomplete.         |
 | **Q1: Implement Visualizations (1.4)** | The chosen visualization is implemented. | Visualization works but lacks clear labeling. | Implementation has obvious bugs. |
 | **Q1: Report Insights (0.6 pts)**      | A short paragraph clearly answers the question using the visualization. |      | A paragraph is provided but lacks clarity or insight |
-| **Q2: Sketch Visualizations (1.5 pts)**| Provides 3 diverse designs, explains visual encodings clearly (e.g., axes, color, size) | Designs overlap significantly, or explanations lack clarity.   | Fewer than 3 designs are provided, or none of the 3 designs can anwser the question. |
+| **Q2: Sketch Visualizations (1.5 pts)**| Provides 3 diverse designs, explains data attribute types and visual encodings clearly | Designs overlap significantly, or explanations lack clarity.   | Fewer than 3 designs are provided, or none of the 3 designs can anwser the question. |
 | **Q2: Choose One Design (0.5 pts)**        | Justifies why chosen a certain design    |     | Justification is vague or incomplete.         |
 | **Q2: Implement Visualizations (1.4)** | The chosen visualization is implemented. | Visualization works but lacks clear labeling. | Implementation has obvious bugs. |
 | **Q2: Report Insights (0.6 pts)**      | A short paragraph clearly answers the question using the visualization. |      | A paragraph is provided but lacks clarity or insight |
