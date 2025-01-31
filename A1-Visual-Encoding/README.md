@@ -1,6 +1,6 @@
 ## Preparation
 We will continue using the project folder from A0. 
-Please move the `src/routes/+page.svelte` you created in A1 into `src/routes/A0/+page.svelte`, which can be accessed via `http://localhost:5173/A0`. 
+Please move the `src/routes/+page.svelte` you created in A0 into `src/routes/A0/+page.svelte`, which can be now accessed via `http://localhost:5173/A0`. 
 Similarly, we will create `src/routes/A1/+page.svelte` for this assignment.
 
 We will need to install d3 for this assignment. Run
@@ -58,7 +58,7 @@ If the data is properly formated, run `npm run dev`, open `http://localhost:5173
 
 
 ### 3. Sketch Visual Designs
-For each of the following questions, sketch at least three different visualizations. 
+For **each** of the following questions, sketch at least three different visualizations. 
 Please explore diverse visual encodings for each question. 
 Explain each of your sketches (data attributes, marks, and visual channels), compare the three sketches and decide one design that is better than the others in effectively addressing the question.
 
