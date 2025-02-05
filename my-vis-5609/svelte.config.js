@@ -7,7 +7,10 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: process.argv.includes('dev') ? '' : '/5609Visualization-Assignments'
+			base: process.env.BASE_PATH || ''  // Uses environment variable for flexibility
+		},
+		prerender: {
+			handleHttpError: 'warn'  // Prevent build failure on missing assets
 		}
 	}
 };
