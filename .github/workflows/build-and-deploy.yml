@@ -16,14 +16,14 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: './my-vis-5609/package-lock.json'
+          cache-dependency-path: 'my-vis-5609/package-lock.json'
 
       - name: Install dependencies
-        working-directory: ./my-vis-5609
+        working-directory: my-vis-5609
         run: npm install
 
       - name: build
-        working-directory: ./my-vis-5609
+        working-directory: my-vis-5609
         env:
            BASE_PATH: '/5609Visualization-Assignments'
         run: npm run build
@@ -31,7 +31,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-           path: 'my-vis-5609/build/' 
+           path: 'my-vis-5609/build/'
 
   deploy:
     needs: build_site
