@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- compiled from javascript file -->
+<script>
+    var cnt = 0;
+    var maxClicks = 5;
+    function onClick() {
+        if (cnt < maxClicks) {
+            cnt += 1;
+            var remaining = maxClicks - cnt;
+            
+            if (cnt === maxClicks) {
+                document.getElementById("status").innerHTML = "No more clicks remaining!";
+            } else {
+                document.getElementById("status").innerHTML = "Number of Clicks: " + remaining;
+            }
+        }
+    };
+</script>
+
+<!-- compiled from css file -->
+<style>
+    button {
+        background-color: #44aa66;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: xx-large;
+    }
+</style>
+
+<p>You can click up to 5 times</p>
+<button type="button" onClick="onClick()">Click me</button>
+<p id="status">Number of Clicks: 5</p>
+</body>
+</html>
