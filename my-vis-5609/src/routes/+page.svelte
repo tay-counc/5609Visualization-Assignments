@@ -13,7 +13,7 @@
 <!-- I added an alt image since the script "npm run dev -- --open" was giving an error when opening  -->
 <img
     width="200px"
-    src="/Annie.png"
+    src="/5609Visualization-Assignments/Annie.png"
 	alt="Annie" 
 />
 
