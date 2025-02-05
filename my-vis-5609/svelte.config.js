@@ -1,18 +1,17 @@
 import adapter from '@sveltejs/adapter-static';
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
-	kit: {
-		adapter: adapter({
-			fallback: '404.html'
-		}),
-		paths: {
-			base: process.env.BASE_PATH || ''  // Uses environment variable for flexibility
-		},
-		prerender: {
-			handleHttpError: 'warn'  // Prevent build failure on missing assets
-		}
-	}
+export default {
+  kit: {
+    adapter: adapter({
+      pages: 'build',   // Ensures the output directory is correct
+      assets: 'build',
+      fallback: '404.html'
+    }),
+    paths: {
+      base: process.env.GITHUB_ACTIONS ? '/5609Visualization-Assignments' : ''
+    },
+    prerender: {
+      handleHttpError: 'warn'
+    }
+  }
 };
-
-export default config;
