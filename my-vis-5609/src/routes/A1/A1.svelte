@@ -41,6 +41,5 @@
 
 <p>Here are {movies.length == 0 ? "..." : movies.length + " "} movies</p>
 <Bar {movies} />
-
 <LineChart {movies} />
 <Scatter {movies} />
