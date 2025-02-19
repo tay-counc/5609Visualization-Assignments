@@ -135,8 +135,7 @@
             font-size="12"
             text-anchor="middle"
           >
-          <!-- tip: the text below should change with the hover on interaction -->
-            {cnt} 
+            {selectedGenre === `${genre}: ${cnt}` ? selectedGenre : cnt}
           </text>
         </g>
       {/each}
