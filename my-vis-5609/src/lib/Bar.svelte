@@ -1,25 +1,27 @@
 <script lang="ts">
   import type { TMovie } from "../types";
   import * as d3 from "d3";
-  import { onMount } from "svelte";
+  // define the props of the Bar component
+  type Props = {
+    movies: TMovie[];
+    progress?: number;
+    width?: number;
+    height?: number;
+  };
+  // progress is 100 by default unless specified
+  let { movies, progress = 100, width = 500, height = 400 }: Props = $props();
 
-  // Define props with default values
-  export let movies: TMovie[] = [];
-  export let progress: number = 100;
-  export let width: number = 500;
-  export let height: number = 400;
+  let selectedGenre: string = $state();
 
-  let selectedGenre: string | null = null;
+  // processing the data; $derived is used to create a reactive variable that updates whenever the dependent variables change
+  const yearRange = $derived(d3.extent(movies.map((d) => d.year)));
 
-  // Compute the range of years in the dataset
-  let yearRange: [Date, Date] = d3.extent(movies, (d) => d.year) as [Date, Date];
-
-  function getUpYear(yearRange: [Date, Date]) {
+  function getUpYear(yearRange: [undefined, undefined] | [Date, Date]) {
     if (!yearRange[0]) return new Date();
     const timeScale = d3.scaleTime().domain(yearRange).range([0, 100]);
     return timeScale.invert(progress);
   }
-  let upYear: Date = getUpYear(yearRange);
+  const upYear: Date = $derived(getUpYear(yearRange!));
 
   function getGenreNums(movies: TMovie[], upYear: Date) {
     let res: { [genre: string]: number } = {};
@@ -32,24 +34,55 @@
       });
     return res;
   }
-  let genreNums = getGenreNums(movies, upYear);
 
-  // SVG margins
-  const margin = { top: 15, bottom: 50, left: 50, right: 10 };
-  let usableWidth = width - margin.left - margin.right;
-  let usableHeight = height - margin.top - margin.bottom;
+  const genreNums = $derived(getGenreNums(movies, upYear));
 
-  // Scales
-  let xScale = d3.scaleBand()
-    .domain(Object.keys(genreNums))
-    .range([0, usableWidth])
-    .padding(0.2);
+  // drawing the bar chart
 
-  let yScale = d3.scaleLinear()
-    .domain([0, d3.max(Object.values(genreNums)) || 1])
-    .range([usableHeight, 0]);
+  const margin = {
+    top: 15,
+    bottom: 50,
+    left: 30,
+    right: 10,
+  };
 
-  let xAxis: any, yAxis: any;
+  let usableArea = {
+    top: margin.top,
+    right: width - margin.right,
+    bottom: height - margin.bottom,
+    left: margin.left,
+  };
+
+  const xScale = $derived(
+    // tip: use d3.scaleBand() to create a band scale for the x-axis
+    // d3
+    //   .scaleBand()
+    //   .range(xx)
+    //   .domain(xx)
+    //   .padding(xx),
+
+    d3.scaleBand()
+      .domain(Object.keys(genreNums))  // Use genre names as domain
+      .range([usableArea.left, usableArea.right])  // Scale to fit SVG width
+      .padding(0.1) // Adds spacing between bars
+  );
+
+  const yScale = $derived(
+    // tip: use d3.scaleLinear() to create a linear scale for the y-axis
+    // d3
+    //   .scaleLinear()
+    //   .range(xx)
+    //   .domain(xxx),
+
+    d3.scaleLinear()
+      .domain([0, d3.max(Object.values(genreNums)) ?? 1])  // Avoid NaN errors
+      .range([usableArea.bottom, usableArea.top])  // SVG y-coordinates (bottom to top)
+  );
+
+  const xBarwidth: number = $derived(xScale.bandwidth());
+
+  let xAxis: any = $state(),
+    yAxis: any = $state();
 
   function updateAxis() {
     d3.select(xAxis)
@@ -58,13 +91,17 @@
       .attr("transform", "rotate(45)")
       .style("text-anchor", "start");
 
-    d3.select(yAxis).call(d3.axisLeft(yScale));
+    d3.select(yAxis)
+      .call(d3.axisLeft(yScale));
+
+    // tip:
+    // similar to the x-axis, create a y-axis using d3.axisLeft() and bind it to the yAxis variable
   }
 
-  onMount(() => {
+  // the $effect function is used to run a function whenever the reactive variables change, also known as a side effect
+  $effect(() => {
     updateAxis();
   });
-
 </script>
 
 <h3>
@@ -73,34 +110,40 @@
 
 {#if movies.length > 0}
   <svg {width} {height}>
-    <g transform="translate({margin.left}, {margin.top})">
-      {#each Object.entries(genreNums) as [genre, count]}
+    <g class="bars">
+      {#each Object.entries(genreNums) as [genre, cnt]}
         <g class={genre}>
+          <!-- tip: draw bars here using the svg <rect/> component -->
           <rect
-            width={xScale.bandwidth()}
-            height={usableHeight - yScale(count)}
-            x={xScale(genre)}
-            y={yScale(count)}
-            fill="#449900"
-            class="bar"
-            opacity={selectedGenre === genre ? 0.5 : 1}
-            on:mouseover={() => selectedGenre = genre}
-            on:mouseout={() => selectedGenre = null}
-          />
+          role="graphics-document"
+          aria-label="Bar representing {genre} with {cnt} movies"
+          width={xBarwidth}
+          height={yScale(0) - (yScale(cnt) ?? 0)}
+          x={xScale(genre) ?? 0}
+          y={yScale(cnt) ?? 0}
+          fill="#449900"
+          class="bar"
+          opacity={selectedGenre === `${genre}: ${cnt}` ? 1 : 0.7}
+          onmouseover={() => (selectedGenre = `${genre}: ${cnt}`)}
+          onfocus={() => (selectedGenre = `${genre}: ${cnt}`)}
+          onmouseout={() => (selectedGenre = '')}
+          onblur={() => (selectedGenre = '')}
+        />
           <text
-            x={xScale(genre)! + xScale.bandwidth() / 2}
-            y={yScale(count) - 5}
+            x={xScale(genre)! + xBarwidth / 2}
+            y={yScale(cnt) - 5}
             font-size="12"
             text-anchor="middle"
           >
-            {count}
+          <!-- tip: the text below should change with the hover on interaction -->
+            {cnt} 
           </text>
         </g>
       {/each}
     </g>
 
-    <g transform="translate({margin.left}, {height - margin.bottom})" bind:this={xAxis} />
-    <g transform="translate({margin.left}, {margin.top})" bind:this={yAxis} />
+    <g transform="translate(0, {usableArea.bottom})" bind:this={xAxis} />
+    <g transform="translate({usableArea.left}, 0)" bind:this={yAxis} />
   </svg>
 {/if}
 
@@ -109,6 +152,6 @@
     transition:
       y 0.1s ease,
       height 0.1s ease,
-      width 0.1s ease;
+      width 0.1s ease; /* Smooth transition for height */
   }
 </style>
