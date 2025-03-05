@@ -1,270 +1,202 @@
 <script lang="ts">
     import type { TMovie } from "../types";
     import * as d3 from "d3";
-    
-    // define the props
-    type Props = {
-      movies: TMovie[];
-      width?: number;
-      height?: number;
+
+    type TProps = {
+        movies: TMovie[];
+        x: keyof TMovie; // for simplicity, we assume x
+        y: keyof TMovie;
+        size?: keyof TMovie;
+        width?: number;
+        height?: number;
     };
-    
-    let { movies, width = 500, height = 400 }: Props = $props();
-  
-    let selectedPoint: string = $state();
-    let xGenre: string = $state("Drama");  // Default x-axis genre
-    let yGenre: string = $state("Comedy"); // Default y-axis genre
-  
-    // Get all available genres
-    function getAllGenres(movies: TMovie[]) {
-      const genres = new Set<string>();
-      movies.forEach(movie => {
-        movie.genres.forEach(genre => {
-          genres.add(genre);
-        });
-      });
-      return Array.from(genres).sort();
-    }
-  
-    const allGenres = $derived(getAllGenres(movies));
-  
-    // Prepare data by year for the scatter plot
-    function getYearlyGenreCounts(movies: TMovie[]) {
-      const yearlyData: { year: number; [genre: string]: number }[] = [];
-      
-      // Group by year
-      const yearGroups = d3.group(movies, m => m.year.getFullYear());
-      
-      // Count genres for each year
-      yearGroups.forEach((yearMovies, year) => {
-        const dataPoint: any = { year };
-        
-        // Initialize all genres to 0
-        allGenres.forEach(genre => {
-          dataPoint[genre] = 0;
-        });
-        
-        // Count movies for each genre in this year
-        yearMovies.forEach(movie => {
-          movie.genres.forEach(genre => {
-            dataPoint[genre] += 1;
-          });
-        });
-        
-        yearlyData.push(dataPoint);
-      });
-      
-      return yearlyData;
-    }
-  
-    const scatterData = $derived(getYearlyGenreCounts(movies));
-  
-    // SVG dimensions
+    const { movies, x, y, size, height = 500, width = 600 }: TProps = $props();
+
+    let selectedMovie: TMovie | undefined = $state();
+
     const margin = {
-      top: 20,
-      bottom: 50,
-      left: 50,
-      right: 20,
+        top: 15,
+        bottom: 50,
+        left: 30,
+        right: 10,
     };
-  
-    let usableArea = {
-      top: margin.top,
-      right: width - margin.right,
-      bottom: height - margin.bottom,
-      left: margin.left,
+    const usableArea = {
+        top: margin.top,
+        right: width - margin.right,
+        bottom: height - margin.bottom,
+        left: margin.left,
     };
-  
-    // Scales
-    const xScale = $derived(
-      d3.scaleLinear()
-        .domain([0, d3.max(scatterData, d => d[xGenre] || 0) || 0])
-        .range([usableArea.left, usableArea.right])
-        .nice()
-    );
-  
-    const yScale = $derived(
-      d3.scaleLinear()
-        .domain([0, d3.max(scatterData, d => d[yGenre] || 0) || 0])
-        .range([usableArea.bottom, usableArea.top])
-        .nice()
-    );
-  
+    const sizeRange = [3, 15];
+
+    function getScale(
+        attrName: keyof TMovie,
+        axis: "x" | "y" | "color" | "size",
+        movies: TMovie[],
+    ) {
+        if (movies.length == 0) {
+            return null;
+        }
+
+        let range: number[] = [0, 0];
+        if (axis == "x") {
+            range = [usableArea.left, usableArea.right];
+        } else if (axis == "y") {
+            range = [usableArea.bottom, usableArea.top];
+        } else if (axis == "size") {
+            range = sizeRange;
+        }
+
+        if (typeof movies[0][attrName] == "string") {
+            return d3
+                .scaleBand()
+                .domain(movies.map((d) => d[attrName] as string))
+                .range(range);
+        } else if (typeof movies[0][attrName] == "number") {
+            return d3
+                .scaleLinear()
+                .domain(
+                    d3.extent(movies, (d) => d[attrName] as number) as [
+                        number,
+                        number,
+                    ],
+                )
+                .range(range);
+        } else if (movies[0][attrName] instanceof Date) {
+            // date
+            return d3
+                .scaleTime()
+                .domain(
+                    d3.extent(movies, (d) => d[attrName] as Date) as [
+                        Date,
+                        Date,
+                    ],
+                )
+                .range(range);
+        } else if (typeof movies[0][attrName] == "object") {
+            // array
+            let allValues = movies
+                .map((d) => d[attrName] as string[])
+                .reduce((acc, val) => acc.concat(val), []);
+            return d3
+                .scaleBand()
+                .domain([...new Set(allValues)])
+                .range(range);
+        } else {
+            return null;
+        }
+    }
+
+    const xScale = $derived(getScale(x, "x", movies));
+    const yScale = $derived(getScale(y, "y", movies));
+    const sizeScale = $derived(size ? getScale(size, "size", movies) : null);
+
     let xAxis: any = $state(),
-      yAxis: any = $state();
-  
+        yAxis: any = $state();
+
     function updateAxis() {
-      d3.select(xAxis)
-        .call(d3.axisBottom(xScale));
-  
-      d3.select(yAxis)
-        .call(d3.axisLeft(yScale));
+        if (!xScale || !yScale) {
+            return;
+        }
+        d3.select(xAxis)
+            .call(d3.axisBottom(xScale))
+            .selectAll("text")
+            .attr("transform", "rotate(45)")
+            .style("text-anchor", "start");
+
+        d3.select(yAxis).call(d3.axisLeft(yScale));
     }
-  
+
+    function handleMovieClick(movie: TMovie) {
+        // tip1: update the selectedMovie variable
+        // if (selectedMovie == movie) {
+        //     xxx
+        // } else {
+        //     xxx
+        // }
+        if (selectedMovie == movie) {
+            selectedMovie = undefined;
+        } else {
+            selectedMovie = movie;
+        }
+    }
+
+    // the $effect function is used to run a function whenever the reactive variables change, also known as a side effect
     $effect(() => {
-      updateAxis();
+        updateAxis();
     });
-    
-    // Calculate correlation coefficient
-    function calculateCorrelation() {
-      if (scatterData.length < 2) return 0;
-      
-      const xValues = scatterData.map(d => d[xGenre] || 0);
-      const yValues = scatterData.map(d => d[yGenre] || 0);
-      
-      const n = xValues.length;
-      const xMean = xValues.reduce((sum, x) => sum + x, 0) / n;
-      const yMean = yValues.reduce((sum, y) => sum + y, 0) / n;
-      
-      let numerator = 0;
-      let xDenominator = 0;
-      let yDenominator = 0;
-      
-      for (let i = 0; i < n; i++) {
-        const xDiff = xValues[i] - xMean;
-        const yDiff = yValues[i] - yMean;
-        numerator += xDiff * yDiff;
-        xDenominator += xDiff * xDiff;
-        yDenominator += yDiff * yDiff;
-      }
-      
-      const denominator = Math.sqrt(xDenominator * yDenominator);
-      return denominator === 0 ? 0 : numerator / denominator;
-    }
-    
-    const correlation = $derived(calculateCorrelation());
-  </script>
-  
-  <h3>
-    Genre Correlation: {xGenre} vs {yGenre}
-  </h3>
-  
-  <div class="controls">
-    <div class="select-group">
-      <label for="xGenre">X-Axis Genre:</label>
-      <select id="xGenre" bind:value={xGenre}>
-        {#each allGenres as genre}
-          <option value={genre}>{genre}</option>
+</script>
+
+<svg {width} {height}>
+    <g class="points">
+        {#each movies as movie}
+            {#if x == "genres"}
+                {#each movie["genres"] as genre}
+                    <!-- svelte-ignore a11y_click_events_have_key_events -->
+                    <!-- svelte-ignore a11y_no_static_element_interactions -->
+                    <circle
+                        cx={xScale ? xScale(genre) : usableArea.left}
+                        cy={yScale ? yScale(movie[y]) : usableArea.bottom}
+                        r={sizeScale ? sizeScale(movie[size]) : sizeRange[0]}
+                        fill={movie == selectedMovie
+                            ? "steelblue"
+                            : "transparent"}
+                        stroke="steelblue"
+                        stroke-width="2"
+                        opacity={movie == selectedMovie ? 1 : 0.5}
+                        onclick={() => handleMovieClick(movie)}
+                    />
+                {/each}
+            {:else}
+                <!-- svelte-ignore a11y_click_events_have_key_events -->
+                <!-- svelte-ignore a11y_no_static_element_interactions -->
+                <circle
+                    cx={xScale ? xScale(movie[x]) : usableArea.left}
+                    cy={yScale ? yScale(movie[y]) : usableArea.bottom}
+                    r={sizeScale ? sizeScale(movie[size]) : sizeRange[0]}
+                    fill={movie == selectedMovie ? "steelblue" : "transparent"}
+                    stroke="steelblue"
+                    stroke-width="2"
+                    opacity={movie == selectedMovie ? 1 : 0.5}
+                    onclick={() => handleMovieClick(movie)}
+                />
+            {/if}
         {/each}
-      </select>
-    </div>
-    
-    <div class="select-group">
-      <label for="yGenre">Y-Axis Genre:</label>
-      <select id="yGenre" bind:value={yGenre}>
-        {#each allGenres as genre}
-          <option value={genre}>{genre}</option>
-        {/each}
-      </select>
-    </div>
-  </div>
-  
-  <div class="correlation-info">
-    Correlation coefficient: {correlation.toFixed(2)}
-    <span class="correlation-strength">
-      ({Math.abs(correlation) < 0.3 ? 'Weak' : Math.abs(correlation) < 0.7 ? 'Moderate' : 'Strong'} 
-      {correlation < 0 ? 'negative' : 'positive'} correlation)
-    </span>
-  </div>
-  
-  {#if movies.length > 0}
-    <svg {width} {height}>
-      <!-- Reference line y = x -->
-      <line
-        x1={xScale(0)}
-        y1={yScale(0)}
-        x2={xScale(d3.max(scatterData, d => d[xGenre] || 0) || 0)}
-        y2={yScale(d3.max(scatterData, d => d[xGenre] || 0) || 0)}
-        stroke="#ddd"
-        stroke-width="1"
-        stroke-dasharray="4"
-      />
-      
-      <!-- Scatter points -->
-      <g class="points">
-        {#each scatterData as point}
-          <circle
-            role="button"
-            tabindex="0"
-            aria-label="Data point for year ${point.year}"
-            cx={xScale(point[xGenre] || 0)}
-            cy={yScale(point[yGenre] || 0)}
-            r="5"
-            fill="#4682B4"
-            opacity="0.7"
-            stroke={selectedPoint === `${point.year}` ? "#333" : "none"}
-            stroke-width="2"
-            onmouseover={() => (selectedPoint = `${point.year}`)}
-            onfocus={() => (selectedPoint = `${point.year}`)}
-            onmouseout={() => (selectedPoint = '')}
-            onblur={() => (selectedPoint = '')}
-          />
-          
-          {#if selectedPoint === `${point.year}`}
-            <text
-              x={xScale(point[xGenre] || 0) + 10}
-              y={yScale(point[yGenre] || 0) - 5}
-              font-size="12"
-            >
-              {point.year}: ({point[xGenre] || 0}, {point[yGenre] || 0})
-            </text>
-          {/if}
-        {/each}
-      </g>
-      
-      <g transform="translate(0, {usableArea.bottom})" bind:this={xAxis} />
-      <g transform="translate({usableArea.left}, 0)" bind:this={yAxis} />
-      
-      <!-- Axis labels -->
-      <text
-        x={width / 2}
-        y={height - 5}
-        text-anchor="middle"
-        font-size="12"
-      >
-        {xGenre} Movies Count
-      </text>
-      
-      <text
-        transform="rotate(-90)"
-        x={-height / 2}
-        y="15"
-        text-anchor="middle"
-        font-size="12"
-      >
-        {yGenre} Movies Count
-      </text>
-    </svg>
-  {/if}
-  
-  <style>
-    .controls {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 15px;
+    </g>
+    <g transform="translate(0, {usableArea.bottom})" bind:this={xAxis} />
+    <g transform="translate({usableArea.left}, 0)" bind:this={yAxis} />
+</svg>
+<div class="selectedInfo">
+    {selectedMovie
+        ? JSON.stringify(selectedMovie, null, 2)
+        : "Click on a point to see details"}
+</div>
+
+<style>
+    /* add animation when the point transit */
+    .points circle {
+        transition:
+            r 0.5s,
+            cx 0.5s,
+            cy 0.5s;
+        cursor: pointer;
     }
-    
-    .select-group {
-      display: flex;
-      align-items: center;
-      gap: 5px;
+
+    svg {
+        display: inline-block; /* Ensures SVG appears inline with the div */
+        vertical-align: top; /* Aligns SVG to the top of the div */
     }
-    
-    .correlation-info {
-      margin-bottom: 10px;
-      font-size: 14px;
+
+    .selectedInfo {
+        display: inline-block; /* Ensures div appears inline with SVG */
+        vertical-align: top; /* Aligns div to the top of SVG */
+        width: 250px; /* Set a fixed width for the div */
+        color: #555;
+        font-family: monospace;
+        white-space: pre-wrap; /* Preserve formatting of JSON */
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        overflow: auto; /* Add scroll if the content overflows */
     }
-    
-    .correlation-strength {
-      font-style: italic;
-    }
-    
-    circle {
-      transition: r 0.2s, opacity 0.2s;
-      cursor: pointer;
-    }
-    
-    circle:hover {
-      r: 7;
-      opacity: 1;
-    }
-  </style>
+</style>
